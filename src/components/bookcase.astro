@@ -1,0 +1,103 @@
+---
+// src/components/Bookcase.astro
+---
+
+<div class="bookcase-container">
+  <!-- Repisa 1 -->
+  <div class="shelf-category">
+    <h3 class="shelf-subtitle">En desarrollo</h3>
+    <div class="shelf-row">
+      <a href="#" class="book-card">
+        <div class="book-cover"></div>
+        <span class="book-label">Wizard App</span>
+      </a>
+      <a href="#" class="book-card">
+        <div class="book-cover"></div>
+        <span class="book-label">Masterlist</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Repisa 2 -->
+  <div class="shelf-category">
+    <h3 class="shelf-subtitle">Completados</h3>
+    <div class="shelf-row">
+      <a href="#" class="book-card">
+        <div class="book-cover"></div>
+        <span class="book-label">Audit Tool</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .bookcase-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 1.5rem;
+    background-color: #faf7f2;
+    border: 8px solid #e8dec8;
+    border-radius: 12px;
+    margin-block: 1.5rem;
+  }
+
+  .shelf-subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #6b5344;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e0d1bc;
+    padding-bottom: 0.25rem;
+  }
+
+  .shelf-row {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-end;
+    padding: 0 1rem;
+    position: relative;
+    min-height: 140px;
+  }
+
+  .shelf-row::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(180deg, #d4b595 0%, #b8936d 100%);
+    border-radius: 3px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
+  }
+
+  .book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    z-index: 1;
+  }
+
+  .book-card:hover {
+    transform: translateY(-6px) scale(1.03);
+  }
+
+  .book-cover {
+    width: 90px;
+    height: 130px;
+    background-color: #d1c7b7;
+    border-radius: 3px 6px 6px 3px;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .book-label {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #4a3b32;
+    text-align: center;
+  }
+</style>
